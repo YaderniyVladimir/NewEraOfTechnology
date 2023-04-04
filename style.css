@@ -1,0 +1,533 @@
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: local('Gilroy-Bold'),
+    url('/Fonts/Gilroy-Bold.woff') format('woff'),
+    url('/Fonts/Gilroy-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Gilroy-Medium';
+  src: local('Gilroy-Medium'),
+    url('/Fonts/Gilroy-Medium.woff') format('woff'),
+    url('/Fonts/Gilroy-Medium.woff2') format('woff2');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.root{
+  max-width: 1445px;
+  font-family: Gilroy-Bold, Arial, serif;
+  margin: 0 auto;
+}
+
+/* Начало секции header */
+
+.header {
+  max-width: 945px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1023px) {
+  .header{
+    margin: 0 39.5px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header{
+    display: none;
+  }
+}
+
+.header__navigation {
+  border-bottom: 1px solid #000;
+}
+
+.header__navigation-list {
+  padding: 33px 0 32px 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  justify-content: space-between;
+}
+
+
+.header__navigation-item {
+  font-family: Gilroy-Bold;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  list-style: none;
+}
+
+.header__item-anchor {
+  text-decoration: none;
+  color: #828282;
+}
+
+.header__item-anchor--marked {
+  color: #070707;
+}
+
+/* Начало секции face */
+
+.face {
+  max-width: 945px;
+  padding: 0px 0 104px 0;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1023px){
+  .face {
+  margin: 0 39.5px;
+  }
+}
+
+.face__cover {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0 30px 0;
+
+}
+
+@media screen and (max-width: 767px){
+  .face__cover {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 0.5fr;
+  } 
+}
+
+.face__menu-btn {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .face__menu-btn {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 20px;
+    right: 40px; 
+  }
+}
+
+.menu__btn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 26px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  right: -100%;
+  height: 100vh;
+  width: 375px;
+  margin: 0;
+  padding: 80px 0;
+  background-color: #ffffff;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+
+.menu__list {
+  list-style: none;
+  text-align: left;
+}
+
+#menu__toggle {
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Кнопка гамбургера */
+
+.span{
+  margin: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+}
+
+.span-margin {
+  margin: 6px 0;
+}
+
+#menu__toggle:checked ~ .menu__btn > .span {
+  transform: rotate(135deg);
+}
+
+#menu__toggle:checked ~ .menu__btn > .span-margin {
+  transform: rotate(45deg);
+  margin: -2px;
+}
+
+#menu__toggle:checked ~ .menu__box {
+  right: 0;
+  visibility: visible;
+}
+
+.menu__btn > .span{
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+
+.menu__item {
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: repeat(5, 80px);
+}
+
+.menu__item-items {
+  text-decoration: none;
+}
+
+.menu__item-items:hover {
+  color: #565656;
+}
+
+.face__name {
+  font-family: Gilroy-Bold;
+  font-size: 47px;
+  line-height: 59px;
+  max-width: 123px;
+  margin: 0;
+}
+
+.face__info {
+  font-family: Gilroy-Medium;
+  font-size: 18px;
+  line-height: 22px;
+  max-width: 180px;
+  margin: 0;
+}
+
+.face__btn-lang {
+  font-family: Gilroy-Bold;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  color: #000000;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  height: 30px;
+  width: 80px; 
+  text-align:end;
+  transform: rotate(270deg);
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 767px){
+  .face__btn-lang {
+    display: none;
+  }
+}
+
+.face__lang-span--inactive {
+  color: #828282;
+}
+
+.face__lang-span--inactive:hover {
+  color: #000000;
+}
+
+.face__image {
+  background-image: url(https://img-www.tf-cdn.com/movie/2/zoolander-2001.jpeg?_v=20170407202729&amp;fit=crop&amp;crop=faces%20entropy&amp;w=400&amp;h=400);
+  aspect-ratio: 2/1;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 767px) {
+  .face__image {
+    height: 480px;
+  }
+}
+
+/* Начало секции about */
+
+.about {
+  background-color: #F6F6F6;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  padding: 120px 0 120px 0;
+}
+
+.about__title {
+  font-family: Gilroy-Bold;
+  font-size: 34px;
+  line-height: 42px;
+  margin: 0;
+}
+
+.about__info {
+  font-family: Gilroy-Medium;
+  font-size: 18px;
+  line-height: 22px;
+  max-width: 485px;
+  text-align: center;
+  white-space: pre-line;
+  margin: 0;
+}
+
+/* Начало секции skills */
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px 0 90px 0;
+}
+.skills__title {
+  font-family: Gilroy-Bold;
+  font-size: 34px;
+  line-height: 42px;
+  text-align: center;
+  margin: 0 0 70px;
+  
+
+}
+.skills__info {
+  font-family: Gilroy-Medium;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  margin: 0 0 80px;
+}
+.skills__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: calc(0px + (90 - 0) * ((100vw - 768px)/(1444 - 768)));
+}
+
+@media screen and (max-width: 767px) {
+  .skills__list{
+    row-gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.skills__item {
+  width: 165px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skills__item-image {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin: 0 0 20px;
+}
+.skills__item-name {
+  font-family: Gilroy-Bold;
+  font-size: 14px;
+  line-height: 17px;
+  width: 80px;
+  height: 30px; 
+  margin: 0 0 30px;
+  text-align: center;
+}
+
+/* Звездочки skills */
+
+.skills__item-stars {
+  direction: rtl;
+}
+.skills__item-star {
+  display: none;
+}
+
+.skills__item-label {
+  font-size: 26px;
+  cursor: pointer;
+}
+.skills__item-label--blue:hover,
+.skills__item-label--blue:hover ~ .skills__item-label--blue,
+.skills__item-star--blue:checked ~ .skills__item-label--blue {
+  color:rgb(60, 110, 196);
+}
+
+.skills__item-label--orange:hover,
+.skills__item-label--orange:hover ~ .skills__item-label--orange,
+.skills__item-star--orange:checked ~ .skills__item-label--orange {
+  color:orange;
+}
+
+.skills__item-label--purple:hover,
+.skills__item-label--purple:hover ~ .skills__item-label--purple,
+.skills__item-star--purple:checked ~ .skills__item-label--purple {
+  color:purple;
+}
+
+.skills__item-label--green:hover,
+.skills__item-label--green:hover ~ .skills__item-label--green,
+.skills__item-star--green:checked ~ .skills__item-label--green {
+  color:rgb(37, 192, 23);
+}
+
+/* Начало секции Portfolio */
+
+.portfolio {
+  background : #F6F6F6;
+  padding: 90px 0 90px;
+  margin: 0;
+}
+.portfolio__title {
+  font-family: Gilroy-Bold;
+  font-size: 34px;
+  line-height: 42px;
+  text-align: center;
+  padding: 0 0 45px;
+  margin: 0 auto;
+}
+
+.portfolio__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  justify-content: center; 
+  column-gap: 10px;
+  max-width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0 39.5px;
+}
+
+.portfolio__item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.portfolio__item-image {
+  max-width: 100%;f
+  object-fit: cover;
+  margin: 0 0 35px;
+}
+
+.portfolio__item-text {
+  font-family: Gilroy-Medium;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  margin: 0;
+}
+
+/* Начало секции Contacts */
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0 80px 0;
+  margin: 0;
+}
+
+.contacts__titel {
+  font-family: Gilroy-Bold;
+  font-size: 34px;
+  line-height: 42px;
+  padding: 0 0 20px;
+  margin: 0;
+}
+.contacts__info {
+  font-family: Gilroy-Medium;
+  font-size: 18px;
+  width: 275px;
+  text-align: center;
+  line-height: 22px;
+  padding: 0 0 30px;
+  margin: 0;
+}
+
+
+.contacts__btn-msg {
+  font-family: Gilroy-Bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: white;
+  background-color: black;
+  cursor: pointer;    
+  height: 42px;
+  width: 180px;
+  border-radius: 20px;
+  margin: 0;
+}
+
+.contacts__btn-msg:hover { 
+  background-color: #212121;
+}
+
+/* Начало footer */
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 125px;
+}
+
+.footer__downtext {
+  font-family: Gilroy-Medium;
+  font-size: 14px;
+  line-height: 17px;
+  color: #828282;
+  white-space: pre-line;
+  text-align: center;
+  width: 320px;
+  padding-top: 45px;
+  margin: 0;
+}
+
+.footer__list{
+  display: flex;
+  justify-content: space-between;
+  width: 340px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__item {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.footer__item-link{
+  margin: 0;
+}
+
+.footer__item-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin: 0;
+}

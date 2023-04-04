@@ -1,0 +1,23 @@
+.root {
+    margin: 0;
+}
+.vova {
+    margin: 0;
+}
+.vova__list {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    column-gap: 1%;
+    list-style: none;
+}
+.vova__item {
+    margin: 0;
+}
+.vova__item-image {
+    color:blueviolet;
+    width: 100%;
+    object-fit: cover;
+    margin: 0;
+}
